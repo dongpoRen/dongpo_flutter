@@ -6,61 +6,71 @@ class LayoutDemo extends StatelessWidget {
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Stack(
-            alignment: Alignment.topLeft,
-            children: <Widget>[
-              SizedBox(
-                width: 200.0,
-                height: 300.0,
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.green[300],
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
-                ),
-              ),
-              SizedBox(height: 32.0),
-              SizedBox(
-                width: 100.0,
-                height: 100.0,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    // borderRadius: BorderRadius.circular(8.0),
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.white
-                      ]
-                    )
-                  ),
-                  child:
-                      Icon(Icons.brightness_2, color: Colors.white, size: 32),
-                ),
-              ),
-              Positioned(
-                right: 20.0,
-                top: 20.0,
-                child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
-              ),
-              Positioned(
-                right: 150.0,
-                top: 100.0,
-                child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
-              ),
-              Positioned(
-                right: 100.0,
-                top: 200.0,
-                child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
-              ),
-            ],
-          )
-        ],
+        children: <Widget>[AspectRationDemo()],
       ),
+    );
+  }
+}
+
+class AspectRationDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 16.0 / 9.0,
+      child: Container(
+        color: Colors.blue,
+      ),
+    );
+  }
+}
+
+class StackDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.topLeft,
+      children: <Widget>[
+        SizedBox(
+          width: 200.0,
+          height: 300.0,
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.green[300],
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
+          ),
+        ),
+        SizedBox(height: 32.0),
+        SizedBox(
+          width: 100.0,
+          height: 100.0,
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black,
+                // borderRadius: BorderRadius.circular(8.0),
+                shape: BoxShape.circle,
+                gradient: RadialGradient(colors: [Colors.red, Colors.white])),
+            child: Icon(Icons.brightness_2, color: Colors.white, size: 32),
+          ),
+        ),
+        Positioned(
+          right: 20.0,
+          top: 20.0,
+          child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
+        ),
+        Positioned(
+          right: 150.0,
+          top: 100.0,
+          child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
+        ),
+        Positioned(
+          right: 100.0,
+          top: 200.0,
+          child: Icon(Icons.ac_unit, color: Colors.white, size: 32),
+        ),
+      ],
     );
   }
 }
