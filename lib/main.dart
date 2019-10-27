@@ -59,7 +59,16 @@ class Home extends StatelessWidget {
             Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
           ],
         ),
-        drawer: Text('This is a drawer'),
+        drawer: Container(
+          color: Colors.white,
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('This is a drawer')
+            ],
+          ),
+         ),
       ),
     );
   }
