@@ -6,7 +6,21 @@ class LayoutDemo extends StatelessWidget {
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[AspectRationDemo()],
+        children: <Widget>[
+          ConstrainedBoxDemo(),
+        ],
+      ),
+    );
+  }
+}
+
+class ConstrainedBoxDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 200.0, maxWidth: 200.0),
+      child: Container(
+        color: Colors.blue,
       ),
     );
   }
