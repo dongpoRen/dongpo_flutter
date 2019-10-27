@@ -4,7 +4,32 @@ import '../model/post.dart';
 class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridViewExtentDemo();
+    return GridViewBuilderDemo();
+  }
+}
+
+class GridViewBuilderDemo extends StatelessWidget {
+  Widget _gridItemBuilder(BuildContext context, int index) {
+    return Container(
+      child: Image.network(
+        posts[index].imageUrl,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.all(8.0),
+      itemCount: posts.length,
+      itemBuilder: _gridItemBuilder,
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200.0,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
+      ),
+    );
   }
 }
 
@@ -61,7 +86,6 @@ class GridViewCountDemo extends StatelessWidget {
 }
 
 class PageViewBuilderDemo extends StatelessWidget {
-  
   Widget _pageItemBuilder(BuildContext context, int index) {
     return Stack(
       children: <Widget>[
