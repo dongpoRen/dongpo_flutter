@@ -3,7 +3,21 @@ import 'package:flutter/material.dart';
 class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RichTextDemo();
+    return Container(
+      color: Colors.grey[400],
+      child: Row(
+        children: <Widget>[
+          Container(
+            child: Icon(Icons.pool, size: 32.0, color: Colors.white),
+            color: Color.fromRGBO(3, 55, 99, 1.0),
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(8.0),
+            width: 90.0,
+            height: 90.0,
+          )
+        ],
+      ),
+    );
   }
 }
 
