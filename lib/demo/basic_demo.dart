@@ -4,16 +4,62 @@ class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[400],
+      // color: Colors.grey[400],
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage('https://resources.ninghao.org/images/say-hello-to-barry.jpg'),
+          alignment: Alignment.topCenter,
+          // repeat: ImageRepeat.repeatY,
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.indigoAccent[400].withOpacity(0.5),
+            BlendMode.hardLight
+          )
+        )
+      ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
             child: Icon(Icons.pool, size: 32.0, color: Colors.white),
-            color: Color.fromRGBO(3, 55, 99, 1.0),
+            // color: Color.fromRGBO(3, 55, 99, 1.0),
             padding: EdgeInsets.all(20),
             margin: EdgeInsets.all(8.0),
             width: 90.0,
             height: 90.0,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(8, 89, 90, 1.0),
+              border: Border.all(
+                  color: Colors.indigo[300],
+                  width: 3,
+                  style: BorderStyle.solid
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(45.0)),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(1.0, 7.0),
+                  color: Color.fromRGBO(90, 90, 255, 1.0),
+                  blurRadius: 10.0, // 模糊程度
+                  spreadRadius: -1, // 阴影扩散程度(+向外扩展，-向内扩展)
+                )
+              ],
+              // shape: BoxShape.circle, // 不能与borderRadius同事设置（当shape为circle时）
+              
+              // gradient: RadialGradient( // 渐变色
+              //   colors: [
+              //     Color.fromRGBO(8, 123, 242, 1.0),
+              //     Color.fromRGBO(13, 93, 22, 0.5),
+              //   ],
+              // ),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromRGBO(8, 123, 242, 1.0),
+                  Color.fromRGBO(13, 93, 22, 0.5),
+                ],
+                begin: Alignment.bottomLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
           )
         ],
       ),
