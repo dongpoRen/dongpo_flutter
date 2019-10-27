@@ -27,7 +27,6 @@ class ListViewDemo extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return ListView.builder(
           itemCount: posts.length,
           itemBuilder: _listItemBuilder,
