@@ -7,13 +7,20 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverSafeArea(
-            sliver: SliverPadding(
-              padding: EdgeInsets.all(8.0),
-              sliver: SliverGridDemo(),
-            ),
-          ),
+          SliverSafeAreaDemo()
         ],
+      ),
+    );
+  }
+}
+
+class SliverSafeAreaDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SliverSafeArea(
+      sliver: SliverPadding(
+        padding: EdgeInsets.all(8.0),
+        sliver: SliverGridDemo(),
       ),
     );
   }
