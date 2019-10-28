@@ -7,22 +7,70 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverSafeAreaDemo()
+          SliverSafeArea(
+            sliver: SliverPadding(
+              padding: EdgeInsets.all(8.0),
+              sliver: SliverListDemo()
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-class SliverSafeAreaDemo extends StatelessWidget {
+class SliverListDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SliverSafeArea(
-      sliver: SliverPadding(
-        padding: EdgeInsets.all(8.0),
-        sliver: SliverGridDemo(),
-      ),
-    );
+    return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: 32.0),
+                      child: Material(
+                        borderRadius: BorderRadius.circular(12.0),
+                        elevation: 14.0,
+                        shadowColor: Colors.grey.withOpacity(0.5),
+                        child: Stack(
+                          children: <Widget>[
+                            AspectRatio(
+                              aspectRatio: 16.0/9.0,
+                              child: Image.network(
+                                posts[index].imageUrl,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Positioned(
+                              left: 32.0,
+                              top: 32.0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    posts[index].title, 
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    posts[index].author, 
+                                    style: TextStyle(
+                                      fontSize: 13.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  childCount: posts.length,
+                ),
+              );
   }
 }
 
