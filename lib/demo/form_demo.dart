@@ -31,7 +31,15 @@ class _TextFiledDemoState extends State<TextFiledDemo> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      
+      decoration: InputDecoration(
+        icon: Icon(Icons.subject),
+        labelText: 'Title',
+        hintText: 'placeholder',
+        // border: InputBorder.none,
+        // border: OutlineInputBorder(),
+        filled: true,
+        fillColor: Colors.blue,
+      ),
     );
   }
 }
