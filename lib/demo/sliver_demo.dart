@@ -7,6 +7,25 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          SliverAppBar(
+            // title: Text('DONGPO'),
+            // pinned: true,
+            floating: true,
+            expandedHeight: 178.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(
+                'Dongpo Flutter'.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 15.0,
+                  letterSpacing: 3.0,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              background: Image.network(
+                posts[0].imageUrl, fit: BoxFit.cover
+              ),
+            ),
+          ),
           SliverSafeArea(
             sliver: SliverPadding(
               padding: EdgeInsets.all(8.0),
