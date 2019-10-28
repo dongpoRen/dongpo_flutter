@@ -34,11 +34,25 @@ class _RegisterFromState extends State<RegisterFrom> {
 
   void _submitRegisterForm() {
     registerFormKey.currentState.save();
+    registerFormKey.currentState.validate();
 
     debugPrint('username: $username');
     debugPrint('password: $password');
   }
 
+  String _validatorUsername(value) {
+    if (value.isEmpty) {
+      return 'username is required.';
+    }
+    return null;
+  }
+  
+  String _validatorPassword(value) {
+    if (value.isEmpty) {
+      return 'password is required.';
+    }
+    return null;
+  }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -48,19 +62,23 @@ class _RegisterFromState extends State<RegisterFrom> {
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Username',
+              helperText: '',
             ),
             onSaved: (value) {
               username = value;
             },
+            validator: _validatorUsername,
           ),
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Password',
+              helperText: '',
             ),
             onSaved: (value) {
               password = value;
             },
+            validator: _validatorPassword,
           ),
           SizedBox(height: 30.0),
           Container(
