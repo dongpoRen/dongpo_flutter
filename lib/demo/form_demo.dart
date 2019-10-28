@@ -31,6 +31,12 @@ class _TextFiledDemoState extends State<TextFiledDemo> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        debugPrint('input: $value');
+      },
+      onSubmitted: (value) {
+        debugPrint('submit: $value');
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.subject),
         labelText: 'Title',
@@ -38,7 +44,7 @@ class _TextFiledDemoState extends State<TextFiledDemo> {
         // border: InputBorder.none,
         // border: OutlineInputBorder(),
         filled: true,
-        fillColor: Colors.blue,
+        // fillColor: Colors.blue,
       ),
     );
   }
