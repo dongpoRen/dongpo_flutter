@@ -14,10 +14,48 @@ class FormDemo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextFiledDemo(),
+              RegisterFrom(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class RegisterFrom extends StatefulWidget {
+  @override
+  _RegisterFromState createState() => _RegisterFromState();
+}
+
+class _RegisterFromState extends State<RegisterFrom> {
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Username',
+            ),
+          ),
+          TextFormField(
+            obscureText: true,
+            decoration: InputDecoration(
+              labelText: 'Password',
+            ),
+          ),
+          SizedBox(height: 30.0),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              color: Theme.of(context).accentColor,
+              child: Text('Register', style: TextStyle(color: Colors.white)),
+              elevation: 0.0,
+              onPressed: () {},
+            ),
+          )
+        ],
       ),
     );
   }
