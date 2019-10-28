@@ -8,8 +8,30 @@ class FormDemo extends StatelessWidget {
         data: Theme.of(context).copyWith(
           primaryColor: Colors.black,
         ),
-        child: ThemeDemo(),
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextFiledDemo(),
+            ],
+          ),
+        ),
       ),
+    );
+  }
+}
+
+class TextFiledDemo extends StatefulWidget {
+  @override
+  _TextFiledDemoState createState() => _TextFiledDemoState();
+}
+
+class _TextFiledDemoState extends State<TextFiledDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      
     );
   }
 }
