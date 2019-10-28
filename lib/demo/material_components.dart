@@ -10,8 +10,74 @@ class MaterialCompoents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
+          ListItem(title: 'Button', page: ButtonDemo()),
+          ListItem(
+              title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
         ],
+      ),
+    );
+  }
+}
+
+class ButtonDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Widget flatButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton(
+          child: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.black,
+          textColor: Theme.of(context).accentColor,
+        ),
+        FlatButton.icon(
+          icon: Icon(Icons.add),
+          label: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.black,
+          textColor: Theme.of(context).accentColor,
+        ),
+      ],
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ButtonDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            flatButtonDemo,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WidgetDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('WidgetDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -31,7 +97,6 @@ class FloatingActionButtonDemo extends StatelessWidget {
       onPressed: () {},
       icon: Icon(Icons.add),
       label: Text('Add'),
-
     );
 
     return Scaffold(
@@ -45,7 +110,7 @@ class FloatingActionButtonDemo extends StatelessWidget {
         child: Container(
           height: 80.0,
         ),
-        shape:  CircularNotchedRectangle(),
+        shape: CircularNotchedRectangle(),
       ),
     );
   }
