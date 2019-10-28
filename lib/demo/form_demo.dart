@@ -68,6 +68,7 @@ class _RegisterFromState extends State<RegisterFrom> {
               username = value;
             },
             validator: _validatorUsername,
+            autovalidate: true,
           ),
           TextFormField(
             obscureText: true,
