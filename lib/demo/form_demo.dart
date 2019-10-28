@@ -38,6 +38,12 @@ class _RegisterFromState extends State<RegisterFrom> {
         registerFormKey.currentState.save();
         debugPrint('username: $username');
         debugPrint('password: $password');
+
+        Scaffold.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Registering...'),
+          )
+        );
     } else {
       setState(() {
         _autovalidate = true;
