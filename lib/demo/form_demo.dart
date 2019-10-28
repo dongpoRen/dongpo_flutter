@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class FormDemo extends StatelessWidget {
@@ -28,12 +29,33 @@ class TextFiledDemo extends StatefulWidget {
 }
 
 class _TextFiledDemoState extends State<TextFiledDemo> {
+
+  final textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    // textEditingController.text = 'hi';
+    textEditingController.addListener(
+      () {
+        debugPrint('input: ${textEditingController.text}');
+      }
+    );
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: (value) {
-        debugPrint('input: $value');
-      },
+      controller: textEditingController,
+      // onChanged: (value) {
+      //   debugPrint('submit: $value');
+      // },
       onSubmitted: (value) {
         debugPrint('submit: $value');
       },
