@@ -20,22 +20,34 @@ class _SwitchDemoState extends State<SwitchDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SwitchListTile(
+              value: _switchItemA,
+              onChanged: (value) {
+                setState(() {
+                  _switchItemA = value;
+                });
+              },
+              title: Text('SwithItemA'),
+              subtitle: Text('description'),
+              secondary: Icon(_switchItemA ? Icons.visibility : Icons.visibility_off),
+              selected: _switchItemA,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  _switchItemA ? '😁' : '😭',
-                  style: TextStyle(fontSize: 32.0),
+                // Text(
+                //   _switchItemA ? '😁' : '😭',
+                //   style: TextStyle(fontSize: 32.0),
 
-                ),
-                Switch(
-                  value: _switchItemA,
-                  onChanged: (value) {
-                    setState(() {
-                      _switchItemA = value;
-                    });
-                  },
-                )
+                // ),
+                // Switch(
+                //   value: _switchItemA,
+                //   onChanged: (value) {
+                //     setState(() {
+                //       _switchItemA = value;
+                //     });
+                //   },
+                // ),
               ],
             )
           ],
