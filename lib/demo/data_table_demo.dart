@@ -15,12 +15,37 @@ class _DataTableDemoState extends State<DataTableDemo> {
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[],
+            DataTable(
+              columns: [
+                DataColumn(
+                  label: Text('Title'),
+                ),
+                DataColumn(
+                  label: Text('Authors'),
+                ),
+              ],
+              rows: [
+                DataRow(
+                  cells: [
+                    DataCell(Text('hello~')),
+                    DataCell(Text('dongpo')),
+                  ],
+                ),
+                DataRow(
+                  cells: [
+                    DataCell(Text('holr ~')),
+                    DataCell(Text('dongpo')),
+                  ],
+                ),
+                DataRow(
+                  cells: [
+                    DataCell(Text('大家好~')),
+                    DataCell(Text('dongpo')),
+                  ],
+                ),
+              ],
             )
           ],
         ),
