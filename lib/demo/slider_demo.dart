@@ -6,6 +6,8 @@ class SliderDemo extends StatefulWidget {
 }
 
 class _SliderDemoState extends State<SliderDemo> {
+  double _sliderItemA = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +22,25 @@ class _SliderDemoState extends State<SliderDemo> {
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[],
-            )
+              children: <Widget>[
+                Slider(
+                  min: 0.0,
+                  max: 15.0,
+                  divisions: 10,
+                  label: '${_sliderItemA.toDouble()}',
+                  value: _sliderItemA,
+                  onChanged: (value) {
+                    setState(() {
+                      _sliderItemA = value;
+                    });
+                  },
+                  activeColor: Theme.of(context).accentColor,
+                  inactiveColor: Theme.of(context).accentColor.withOpacity(0.3),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0,),
+            Text('SliderValue: $_sliderItemA'),
           ],
         ),
       ),
