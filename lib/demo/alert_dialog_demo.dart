@@ -1,11 +1,59 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class AlertDialogDemo extends StatefulWidget {
   @override
   _AlertDialogDemoState createState() => _AlertDialogDemoState();
 }
 
+enum Action {
+  OK,
+  Cancel
+}
+
 class _AlertDialogDemoState extends State<AlertDialogDemo> {
+  String _choice = 'Nothing';
+
+  Future _openAlertDialog() async {
+    final action = await showDialog(
+      barrierDismissible: false, // 不需要用户选择
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('AlertDialog'),
+          content: Text('Are you sure about this?'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context, Action.Cancel);
+              },
+            ),
+            FlatButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.pop(context, Action.OK);
+              },
+            ),
+          ],
+        );
+      },
+    );
+
+    switch(action) {
+      case Action.OK:
+        setState(() {
+          _choice = 'OK';
+        });
+        break;
+      case Action.Cancel:
+        setState(() {
+          _choice = 'Cancel';
+        });
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +66,16 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('Your choice is $_choice'),
+            SizedBox(height: 32.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[],
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Open Alert Dialog'),
+                  onPressed: _openAlertDialog,
+                )
+              ],
             )
           ],
         ),
