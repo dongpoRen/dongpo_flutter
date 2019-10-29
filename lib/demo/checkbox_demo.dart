@@ -20,19 +20,31 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            CheckboxListTile(
+              value: _checkboxItemA,
+              onChanged: (value) {
+                setState(() {
+                  _checkboxItemA = value;
+                });
+              },
+              title: Text('CheckboxImteA'),
+              subtitle: Text('description'),
+              secondary: Icon(Icons.bookmark),
+              selected: _checkboxItemA,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Checkbox(
-                  checkColor: Colors.blue,
-                  value: _checkboxItemA,
-                  onChanged: (value) {
-                    setState(() {
-                      _checkboxItemA = value;
-                    });
-                  },
-                  activeColor: Colors.black,
-                )
+                // Checkbox(
+                //   checkColor: Colors.blue,
+                //   value: _checkboxItemA,
+                //   onChanged: (value) {
+                //     setState(() {
+                //       _checkboxItemA = value;
+                //     });
+                //   },
+                //   activeColor: Colors.black,
+                // ),
               ],
             )
           ],
