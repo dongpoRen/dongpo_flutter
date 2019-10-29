@@ -40,6 +40,7 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+
     final Widget rasideButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -74,6 +75,7 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+
     final Widget outlineButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -111,6 +113,7 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+
     final Widget fixWidthButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -131,37 +134,81 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+
     final Widget expandedButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: OutlineButton(
+            child: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+        SizedBox(
+          width: 12.0,
+        ),
+        Expanded(
+          flex: 2,
+          child: OutlineButton(
+            child: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
+
+    final Widget buttonBarDemo = Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(
-                  child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey[100],
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonTheme: ButtonThemeData(
+                      padding: EdgeInsets.symmetric(horizontal: 32.0),
+                    )
                   ),
-                ),
-                SizedBox(width: 12.0,),
-                Expanded(
-                  flex: 2,
-                  child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey[100],
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
+                  child: ButtonBar(
+                    children: <Widget>[
+                      OutlineButton(
+                        child: Text('Button'),
+                        onPressed: () {},
+                        splashColor: Colors.grey[100],
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                        // textTheme: ButtonTextTheme.primary,
+                      ),
+                      OutlineButton(
+                        child: Text('Button'),
+                        onPressed: () {},
+                        splashColor: Colors.grey[100],
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                        // textTheme: ButtonTextTheme.primary,
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -180,34 +227,39 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(
-                  child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey[100],
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonTheme: ButtonThemeData(
+                      padding: EdgeInsets.symmetric(horizontal: 32.0),
+                    )
                   ),
-                ),
-                SizedBox(width: 12.0,),
-                Expanded(
-                  flex: 2,
-                  child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey[100],
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
+                  child: ButtonBar(
+                    children: <Widget>[
+                      OutlineButton(
+                        child: Text('Button'),
+                        onPressed: () {},
+                        splashColor: Colors.grey[100],
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                        // textTheme: ButtonTextTheme.primary,
+                      ),
+                      OutlineButton(
+                        child: Text('Button'),
+                        onPressed: () {},
+                        splashColor: Colors.grey[100],
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                        // textTheme: ButtonTextTheme.primary,
+                      ),
+                    ],
                   ),
                 ),
               ],
