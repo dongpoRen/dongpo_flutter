@@ -111,6 +111,61 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+    final Widget fixWidthButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          width: 120.0,
+          child: OutlineButton(
+            child: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
+    final Widget expandedButtonDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: OutlineButton(
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey[100],
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
+                  ),
+                ),
+                SizedBox(width: 12.0,),
+                Expanded(
+                  flex: 2,
+                  child: OutlineButton(
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey[100],
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
+                  ),
+                ),
+              ],
+            );
 
     return Scaffold(
       appBar: AppBar(
@@ -125,20 +180,35 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  width: 120.0,
+                Expanded(
                   child: OutlineButton(
-                  child: Text('Button'),
-                  onPressed: () {},
-                  splashColor: Colors.grey[100],
-                  borderSide: BorderSide(
-                    color: Colors.black,
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey[100],
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
                   ),
-                  // color: Theme.of(context).accentColor,
-                  textColor: Colors.black,
-                  highlightedBorderColor: Colors.grey,
-                  // textTheme: ButtonTextTheme.primary,
                 ),
+                SizedBox(width: 12.0,),
+                Expanded(
+                  flex: 2,
+                  child: OutlineButton(
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey[100],
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
+                  ),
                 ),
               ],
             ),
