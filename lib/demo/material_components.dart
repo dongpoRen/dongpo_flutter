@@ -111,6 +111,7 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -124,37 +125,20 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    buttonColor: Theme.of(context).accentColor,
-                    buttonTheme: ButtonThemeData(
-                      textTheme: ButtonTextTheme.primary,
-                      // shape: BeveledRectangleBorder(
-                      //   borderRadius: BorderRadius.circular(5.0),
-                      // ),
-                      shape: StadiumBorder(),
-                    ),
-                  ),
+                Container(
+                  width: 120.0,
                   child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey[100],
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
-                  ),
-                ),
-                SizedBox(width: 40.0),
-                OutlineButton.icon(
-                  icon: Icon(Icons.add),
-                  label: Text('Button'),
+                  child: Text('Button'),
                   onPressed: () {},
-                  splashColor: Colors.black,
-                  textColor: Theme.of(context).accentColor,
+                  splashColor: Colors.grey[100],
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                  ),
+                  // color: Theme.of(context).accentColor,
+                  textColor: Colors.black,
+                  highlightedBorderColor: Colors.grey,
+                  // textTheme: ButtonTextTheme.primary,
+                ),
                 ),
               ],
             ),
